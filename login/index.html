@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Transparent Login Form</title>
+		<link rel="stylesheet" href="style/style.css">
+		<script type="text/javascript">
+		    var attempt = 3; // Variable to count number of attempts.
+		  // Below function Executes on click of login button.
+		  function validate(){
+		  var username = document.getElementById("username").value;
+		  var password = document.getElementById("password").value;
+		  if ( username == "Formget" && password == "formget#123"){
+		  alert ("Login successfully");
+		  window.location = "success.html"; // Redirecting to other page.
+		  return false;
+		  }
+		  else{
+		  attempt --;// Decrementing by one.
+		  alert("You have left "+attempt+" attempt;");
+		  // Disabling fields after 3 attempts.
+		  if( attempt == 0){
+		  document.getElementById("username").disabled = true;
+		  document.getElementById("password").disabled = true;
+		  document.getElementById("submit").disabled = true;
+		  return false;
+		  }
+		  }
+		  }
+		</script>
+	</head>
+	<body>
+<div class="loginBox">
+			<img src="imags/user.png" class="user">
+			<h2>Log In Here</h2>
+			<form>
+				<p>Email / Username</p>
+				<input id="username" type="text" name="" placeholder="Enter Email / Username">
+				<p>Password</p>
+				<input id="password" type="password" name="" placeholder="••••••">
+				<input id="submit" type="submit" name="" value="Sign In">
+				<a href="#">Forget Password</a>
+			</form>
+		</div>
+	</body>
+</html>
